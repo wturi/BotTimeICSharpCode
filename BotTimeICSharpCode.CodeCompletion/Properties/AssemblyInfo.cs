@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("BotTimeICSharpCode.CodeCompletion")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("BotTime extensible text editor")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Clement")]
 [assembly: AssemblyProduct("BotTimeICSharpCode.CodeCompletion")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
