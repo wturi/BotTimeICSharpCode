@@ -37,6 +37,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BotTimeICSharpCode.AvalonEdit, Version=1.0.1.0, Culture=neutral, PublicKeyToken=9cc39be672370310, processorArchitecture=MSIL">
+      <HintPath>..\packages\BotTimeICSharpCode.AvalonEdit.1.0.2\lib\net45\BotTimeICSharpCode.AvalonEdit.dll</HintPath>
+    </Reference>
     <Reference Include="ICSharpCode.AvalonEdit, Version=5.0.3.0, Culture=neutral, PublicKeyToken=9cc39be672370310, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DLLs\ICSharpCode.AvalonEdit.dll</HintPath>
@@ -45,24 +48,19 @@
       <HintPath>..\DLLs\ICSharpCode.CodeCompletion.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.NRefactory, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d4bfe873e7598c49, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\DLLs\ICSharpCode.NRefactory.dll</HintPath>
+      <HintPath>..\packages\BotTimeICSharpCode.AvalonEdit.1.0.2\lib\net45\ICSharpCode.NRefactory.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.NRefactory.Cecil, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d4bfe873e7598c49, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\DLLs\ICSharpCode.NRefactory.Cecil.dll</HintPath>
+      <HintPath>..\packages\BotTimeICSharpCode.AvalonEdit.1.0.2\lib\net45\ICSharpCode.NRefactory.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.NRefactory.CSharp, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d4bfe873e7598c49, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\DLLs\ICSharpCode.NRefactory.CSharp.dll</HintPath>
+      <HintPath>..\packages\BotTimeICSharpCode.AvalonEdit.1.0.2\lib\net45\ICSharpCode.NRefactory.CSharp.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.NRefactory.Xml, Version=5.0.0.0, Culture=neutral, PublicKeyToken=d4bfe873e7598c49, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\DLLs\ICSharpCode.NRefactory.Xml.dll</HintPath>
+      <HintPath>..\packages\BotTimeICSharpCode.AvalonEdit.1.0.2\lib\net45\ICSharpCode.NRefactory.Xml.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil, Version=0.9.5.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\DLLs\Mono.Cecil.dll</HintPath>
+      <HintPath>..\packages\BotTimeICSharpCode.AvalonEdit.1.0.2\lib\net45\Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -96,13 +94,8 @@
     <Compile Include="SegmentTrackingOutputFormatter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BotTimeICSharpCode.AvalonEdit\BotTimeICSharpCode.AvalonEdit.csproj">
-      <Project>{6c55b776-26d4-4db3-a6ab-87e783b2f3d1}</Project>
-      <Name>BotTimeICSharpCode.AvalonEdit</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
