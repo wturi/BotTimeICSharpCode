@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TabControl x:Name="TabControl"
+                    Grid.Row="0"
+                    Margin="10,5"></TabControl>
     </Grid>
 </Window>

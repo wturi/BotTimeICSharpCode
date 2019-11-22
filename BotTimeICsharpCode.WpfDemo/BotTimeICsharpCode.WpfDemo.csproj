@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ScriptProvider.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -93,6 +94,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BotTimeICSharpCode.AvalonEdit\BotTimeICSharpCode.AvalonEdit.csproj">
+      <Project>{6c55b776-26d4-4db3-a6ab-87e783b2f3d1}</Project>
+      <Name>BotTimeICSharpCode.AvalonEdit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BotTimeICSharpCode.CodeCompletion\BotTimeICSharpCode.CodeCompletion.csproj">
+      <Project>{82c28fbb-0408-466a-be20-bd4a3ce76a75}</Project>
+      <Name>BotTimeICSharpCode.CodeCompletion</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
