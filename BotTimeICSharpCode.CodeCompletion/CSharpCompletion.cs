@@ -10,15 +10,15 @@ using ICSharpCode.NRefactory.CSharp.Completion;
 using ICSharpCode.NRefactory.Editor;
 using ICSharpCode.NRefactory.TypeSystem;
 using ICSharpCode.NRefactory.Documentation;
-using ICSharpCode.NRefactory.TypeSystem;
 using System.IO;
+using System.Windows.Forms;
 
 namespace BotTimeICSharpCode.CodeCompletion
 {
     public class CSharpCompletion
     {
         private IProjectContent projectContent;
-        
+
         public CSharpCompletion(IReadOnlyList<Assembly> assemblies = null)
         {
             projectContent = new CSharpProjectContent();
@@ -29,10 +29,10 @@ namespace BotTimeICSharpCode.CodeCompletion
                     typeof(object).Assembly, // mscorlib
                     typeof(Uri).Assembly, // System.dll
                     typeof(Enumerable).Assembly, // System.Core.dll
-                    //					typeof(System.Xml.XmlDocument).Assembly, // System.Xml.dll
-                    //					typeof(System.Drawing.Bitmap).Assembly, // System.Drawing.dll
-                    //					typeof(Form).Assembly, // System.Windows.Forms.dll
-                    //					typeof(ICSharpCode.NRefactory.TypeSystem.IProjectContent).Assembly,
+                    typeof(System.Xml.XmlDocument).Assembly, // System.Xml.dll
+                    typeof(System.Drawing.Bitmap).Assembly, // System.Drawing.dll
+                    typeof(Form).Assembly, // System.Windows.Forms.dll
+                    typeof(IProjectContent).Assembly
                 };
             }
 
@@ -42,7 +42,7 @@ namespace BotTimeICSharpCode.CodeCompletion
             Stopwatch total = Stopwatch.StartNew();
             Parallel.For(
                 0, assemblies.Count,
-                delegate(int i)
+                delegate (int i)
                 {
                     var loader = new CecilLoader();
                     var path = assemblies[i].Location;
@@ -54,7 +54,7 @@ namespace BotTimeICSharpCode.CodeCompletion
         }
 
         public CSharpCompletion(ICSharpScriptProvider scriptProvider, IReadOnlyList<Assembly> assemblies = null)
-            :this(assemblies)
+            : this(assemblies)
         {
             ScriptProvider = scriptProvider;
         }
@@ -63,12 +63,12 @@ namespace BotTimeICSharpCode.CodeCompletion
 
         private XmlDocumentationProvider GetXmlDocumentation(string dllPath)
         {
-            if(string.IsNullOrEmpty(dllPath))
+            if (string.IsNullOrEmpty(dllPath))
                 return null;
 
             var xmlFileName = Path.GetFileNameWithoutExtension(dllPath) + ".xml";
             var localPath = Path.Combine(Path.GetDirectoryName(dllPath), xmlFileName);
-            if(File.Exists(localPath))
+            if (File.Exists(localPath))
                 return new XmlDocumentationProvider(localPath);
 
             //if it's a .NET framework assembly it's in one of following folders

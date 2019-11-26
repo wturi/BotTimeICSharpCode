@@ -24,6 +24,15 @@ namespace BotTimeICsharpCode.WpfDemo
             var importNamespace = originalNamespaceList.Select(d => $"using {d};");
 
             ImportNamespace = string.Join("\r\n", importNamespace);
+            ImportNamespace= @"using Friday.ActivityLibrary.SystemToolActivities;
+            using System.Xml;
+            using System.Linq;
+            using Friday.StandardVariables;
+            using System.Collections.Generic;
+            using System;
+            using System.Data;
+            using System.Drawing;
+            using System.Text; ";
         }
 
         public string GetUsing()
@@ -38,7 +47,7 @@ namespace BotTimeICsharpCode.WpfDemo
 
         public string GetNamespace()
         {
-            return ImportNamespace;
+            return "InvokeCodeTest";
         }
     }
 }
